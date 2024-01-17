@@ -6,19 +6,24 @@
     <title>Weather app</title>
   </head>
   <body>
-    <h1>Welcome to the weather app!</h1>
+    <h1>Welcome to the African weather forecast!🌍</h1>
     <header>
       <form action="submit">
-        <input type="search" placeholder="Enter a city..." required />
+        <input
+          type="search"
+          placeholder="Enter a city..."
+          required
+          class="search-bar"
+        />
         <input type="submit" value="search" />
       </form>
     </header>
     <main>
-      <h1>Nairobi</h1>
-      <div>
-        <div>😎38°C</div>
-        <div>Tuesday 14:49, sunny</div>
-        <div>Humidity: 10%, Wind: 3 km/h</div>
+      <h2>Nairobi</h2>
+      <div class="weather">
+        Tuesday 14:49, sunny
+        <br />Humidity: 10%, Wind: 3 km/h
+        <div class="description">😎38<span>°C</span></div>
       </div>
     </main>
     <br />
@@ -35,4 +40,5 @@
       </a>
     </footer>
   </body>
+  <link rel="stylesheet" href="src/style.css" />
 </html>

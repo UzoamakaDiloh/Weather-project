@@ -1,0 +1,44 @@
+body {
+  background-color: whitesmoke;
+}
+
+h1 {
+  color: #531116;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #012e1f;
+}
+
+.search-bar {
+  background-color: #dad4cf;
+  padding-right: 100px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: #e0891f;
+}
+
+.description {
+  color: #012e1f;
+  display: flex;
+  justify-content: right;
+  position: relative;
+  top: -70px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.weather {
+  color: #435852;
+  font-weight: 100;
+}
+
+input {
+  background-color: #531116;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
+}
