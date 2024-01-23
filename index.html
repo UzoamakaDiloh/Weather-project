@@ -9,19 +9,20 @@
     <div class="weather-app">
       <h1>The African Weather Forecast🌍</h1>
       <header>
-        <form action="submit">
+        <form id="search-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="search-bar"
+            id="search-bar"
           />
-          <input type="submit" value="search" />
+          <input type="submit" value="search" class="button" />
         </form>
       </header>
       <main>
         <div class="container">
-          <h2>Nairobi</h2>
+          <h2 id="city">Nairobi</h2>
           <div class="weather">
             Tuesday 14:49, sunny
             <br />Humidity: 10%, Wind: 3 km/h
@@ -34,7 +35,33 @@
         </div>
       </main>
       <br />
-
+      <div class="weather-container">
+        <div class="Tuesday">
+          <div>Tue</div>
+          <div>🌤️</div>
+          <div>25°C</div>
+        </div>
+        <div class="Wednesday">
+          <div>Wed</div>
+          <div>🌤️</div>
+          <div>25°C</div>
+        </div>
+        <div class="Thursday">
+          <div>Thu</div>
+          <div>🌤️</div>
+          <div>25°C</div>
+        </div>
+        <div class="Friday">
+          <div>Fri</div>
+          <div>🌤️</div>
+          <div>25°C</div>
+        </div>
+        <div class="Saturday">
+          <div>Sat</div>
+          <div>🌤️</div>
+          <div>25°C</div>
+        </div>
+      </div>
       <footer>
         Built by
         <a href="https://github.com/UzoamakaDiloh/" target="_blank"
@@ -52,4 +79,5 @@
     </div>
   </body>
   <link rel="stylesheet" href="src/style.css" />
+  <script src="src/index.js"></script>
 </html>
