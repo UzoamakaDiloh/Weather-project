@@ -2,6 +2,20 @@ function updateWeatherData(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   //in order to make sure that even with a typo the right city is presented you do the following.
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000); // the current date is displayed when adding "*1000"
+
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed} km/hr`;
+  timeElement.innerHTML = `${date.getDay} ${date.getHours()} : ${
+    date.getMinutes
+  }`;
 
   temperatureElement.innerHTML = Math.round(temperature);
 }
@@ -12,11 +26,11 @@ function searchCity(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeatherData); // this will be another function that will receive a response
 }
+
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-bar");
-  let cityElement = document.querySelector("city");
-  cityElement.innerHTML = searchInput.value;
+
   searchCity(searchInput.value); // the value of the search input is going to be send to the other function.
 }
 
