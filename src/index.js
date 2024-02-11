@@ -10,14 +10,35 @@ function updateWeatherData(response) {
   let date = new Date(response.data.time * 1000); // the current date is displayed when adding "*1000"
 
   cityElement.innerHTML = response.data.city;
+
+  timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed} km/hr`;
-  timeElement.innerHTML = `${date.getDay} ${date.getHours()} : ${
-    date.getMinutes
-  }`;
 
   temperatureElement.innerHTML = Math.round(temperature);
+}
+
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`; // a zero will be placed by single digits
+  }
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 //make a new function that is going to call the city and the data related to the city
@@ -33,6 +54,5 @@ function handleSearchSubmit(event) {
 
   searchCity(searchInput.value); // the value of the search input is going to be send to the other function.
 }
-
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);

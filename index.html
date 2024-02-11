@@ -24,16 +24,21 @@
       <main>
         <div class="container">
           <h2 id="city">Nairobi</h2>
-          <div class="weather">
-            Tuesday 14:49, <span id="description"></span>
-            <br />
-            Humidity: <strong id="humidity"></strong>, Wind:
-            <strong id="wind-speed"></strong>
-          </div>
           <div class="description">
             <div class="number" id="temperature">38</div>
             <div class="emoji">☀️</div>
             <span class="symbol">°C</span>
+          </div>
+          <div class="condition-container">
+            <p class="weather">
+              <span id="time"></span>,
+              <span class="weather-description" id="description"></span>
+            </p>
+            <br />
+            <div class="conditions">
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
+            </div>
           </div>
         </div>
       </main>
